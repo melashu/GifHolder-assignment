@@ -29,12 +29,12 @@ To run the applications you'll need the following installed on your machine:
 ## Getting started
 1. Clone this repository to your local machine
 2. Install dependencies for the React application: `cd` into the frontend directory and run `yarn install`
-4. Install dependencies for the Rails application: `cd` into the backend directory and run `bundle install`
-5. Run the database migrations for the Rails application
+3. Install dependencies for the Rails application: `cd` into the backend directory and run `bundle install`
+4. Run the database migrations for the Rails application
 5. Seed the Rails application database with GIFs using the seed file provided in `/db/seeds.rb`
 6. Start the frontend application: `cd` into the frontend directory and run `yarn start`. The frontend application should be running at http://localhost:3001
-8. Start the backend application: `cd` into the backend directory and run `bundle exec rails s`. The backend application should be running at http://localhost:3000
-9. Navigate to http://localhost:3001 in your browser, you should be redirected to the login and signup page
+7. Start the backend application: `cd` into the backend directory and run `bundle exec rails s`. The backend application should be running at http://localhost:3000
+8. Navigate to http://localhost:3001 in your browser, you should be redirected to the login and signup page
 
 
 ## Submission
