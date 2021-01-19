@@ -7,7 +7,14 @@ export const signup = (params) => {
     },
     body: JSON.stringify(params)
   })
-    .then(data => data.json())
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(err => {
+          throw new Error(err.message)
+        })
+      }
+      return response.json()
+    })
 }
 
 export const login = (params) => {
@@ -18,5 +25,12 @@ export const login = (params) => {
     },
     body: JSON.stringify(params)
   })
-    .then(data => data.json())
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(err => {
+          throw new Error(err.message)
+        })
+      }
+      return response.json()
+    })
 }

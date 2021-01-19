@@ -10,11 +10,17 @@ export default function Login() {
   const auth = useContext(AuthContext);
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setError("")
     api.login({ email, password }).then(res => {
       auth.login(res.token)
+    }).catch(err => {
+      console.log(err)
+      console.log(err.message)
+      setError(err.message)
     })
   }
 
@@ -41,6 +47,7 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
+      {error && <ErrorMessage error={error} />}
       <Spacer mb={24} />
       <div>
         <Button block>Log in</Button>
@@ -51,5 +58,14 @@ export default function Login() {
         <Link to="/signup">Sign up</Link>
       </div>
     </form>
+  )
+}
+
+function ErrorMessage({ error }) {
+  return (
+    <>
+      <Spacer mt={24} />
+      <div style={{ color: "red" }}>{error}</div>
+    </>
   )
 }
