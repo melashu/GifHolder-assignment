@@ -18,8 +18,6 @@ export default function Login() {
     api.login({ email, password }).then(res => {
       auth.login(res.token)
     }).catch(err => {
-      console.log(err)
-      console.log(err.message)
       setError(err.message)
     })
   }

@@ -20,7 +20,7 @@ Expectations:
 
 Making authenticated requests:
 - After signing up or logging in, the frontend application will persist the received token in localStorage and also store the token in the AuthContext so that it is available to all components for making requests.
-- By default, all endpoints in the backend application are authenticated and require the token to be included in the 'X-Authentication' header or as an 'access_token' URL parameter.
+- By default, all endpoints in the backend application are authenticated and require the token to be included in the 'X-Authorization' header or as an 'access_token' URL parameter.
 
 
 ## Prerequisites
