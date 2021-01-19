@@ -18,6 +18,10 @@ Expectations:
 - Ensure that a user's saved GIFs are persisted on the backend 
 - Ensure that two users won't (and can't) see one another's saved GIFs
 
+Making authenticated requests:
+- After signing up or logging in, the frontend application will persist the received token in localStorage and also store the token in the AuthContext so that it is available to all components for making requests.
+- By default, all endpoints in the backend application are authenticated and require the token to be included in the 'X-Authentication' header or as an 'access_token' URL parameter.
+
 
 ## Prerequisites
 To run the applications you'll need the following installed on your machine:
@@ -32,8 +36,8 @@ To run the applications you'll need the following installed on your machine:
 3. Install dependencies for the Rails application: `cd` into the backend directory and run `bundle install`
 4. Run the database migrations for the Rails application
 5. Seed the Rails application database with GIFs using the seed file provided in `/db/seeds.rb`
-6. Start the frontend application: `cd` into the frontend directory and run `yarn start`. The frontend application should be running at http://localhost:3001
-7. Start the backend application: `cd` into the backend directory and run `bundle exec rails s`. The backend application should be running at http://localhost:3000
+6. Start the backend application: `cd` into the backend directory and run `bundle exec rails s`. The backend application should be running at http://localhost:3000
+7. Start the frontend application: `cd` into the frontend directory and run `yarn start`. The frontend application should be running at http://localhost:3001
 8. Navigate to http://localhost:3001 in your browser, you should be redirected to the login and signup page
 
 
