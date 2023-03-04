@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     user = User.create!(email: params[:email], password: params[:password])
     payload = { user_id: user.id }
     token = JWT.encode payload, Rails.application.credentials[:secret_key_base], 'HS256'
-
+    
     render json: { message: 'User Created', token: token }
   rescue ActiveRecord::RecordInvalid => e
     render json: { message: e.message }, status: 400
