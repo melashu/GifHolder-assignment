@@ -10,8 +10,9 @@ class GifController < ApplicationController
 
   def create
     user_gif = UsersGif.new(check_parms)
+    user_gif.user_id = @current_user.id
     if user_gif.save
-      render json: {message: "Your gif successfuly saved!"} 
+      render json: { message: "Your gif successfuly saved!" } 
     else
     render json: {error: user_gif.errors} 
     end
@@ -25,7 +26,7 @@ class GifController < ApplicationController
   private
 
   def check_parms
-    params.permit(:user_id, :gif_id)
+    params.permit(:gif_id)
   end
 
 end
